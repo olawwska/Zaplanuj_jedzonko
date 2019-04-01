@@ -20,7 +20,6 @@
     }
   }
 }
-<<<<<<< HEAD
 
 .section-newsletter {
   background: $navSide-color;
@@ -49,7 +48,7 @@
     font-weight: 900;
     border: none;
   }
-=======
+
 .section {
   &-carousel {
     background-color: $background-color;
@@ -63,14 +62,17 @@
     &__carousel {
       flex: 0 0 60%;
       text-align: center;
+
       &-slide {
-        &:nth-child(2){
+        &:nth-child(2) {
           display: none;
         }
-        &:nth-child(3){
+
+        &:nth-child(3) {
           display: none;
         }
       }
+    }
       &-header {
         font-size: 48px;
       }
@@ -79,6 +81,4 @@
       }
     }
   }
-
->>>>>>> 7d97181cb73c6c733e50f64e6938a24f458fa6db
 }
