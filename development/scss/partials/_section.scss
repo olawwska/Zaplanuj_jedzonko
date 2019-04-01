@@ -20,3 +20,34 @@
     }
   }
 }
+.section {
+  &-carousel {
+    background-color: $background-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 5px;
+    i{
+      align-self: center;
+      font-size: 32px;
+    }
+    &__carousel {
+      flex: 0 0 60%;
+      text-align: center;
+      &-slide {
+        &:nth-child(2){
+          display: none;
+        }
+        &:nth-child(3){
+          display: none;
+        }
+      }
+      &-header {
+        font-size: 48px;
+      }
+      &-text {
+        font-size: 32px;
+      }
+    }
+  }
+
+}
