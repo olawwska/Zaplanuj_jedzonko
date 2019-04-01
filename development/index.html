@@ -5,31 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-    <header>
-      <h1>ZaplanujJedzonko.pl</h1>
+    <header class="header container">
+      <div class="header__logo">
+        <h1>Zaplanuj <span>Jedzonko</span></h1>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-element"><a href="app.html" class="header__nav-link">Zaplanuj posiłki!</a></li>
+          <li class="header__nav-element"><a href="#description" class="header__nav-link">Dlaczego warto?</a></li>
+          <li class="header__nav-element"><a href="#about" class="header__nav-link">O mnie</a></li>
+          <li class="header__nav-element"><a href="#footer" class="header__nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
     </header>
-    <section>
-      <!-- carousel -->
+    <section class="section-carousel container">
+      <i class="fas fa-chevron-left"></i>
+      <div class="section-carousel__carousel">
+        <div class="section-carousel__carousel-slide">
+          <h3 class="section-carousel__carousel-header">Lorem ipsum dolor sit amet</h3>
+          <p class="section-carousel__carousel-text">consectetur adipisicing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="section-carousel__carousel-slide">
+          <h3 class="section-carousel__carousel-header">Lorem ipsum dolor sit amet</h3>
+          <p class="section-carousel__carousel-text">consectetur adipisicing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="section-carousel__carousel-slide">
+          <h3 class="section-carousel__carousel-header">Lorem ipsum dolor sit amet</h3>
+          <p class="section-carousel__carousel-text">consectetur adipisicing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+      <i class="fas fa-chevron-right"></i>
     </section>
-    <section>
-      <!-- CTA + button -->
+    <section class="section-button container">
+      <div class="section-button__texts">
+        <h3 class="section-button__texts-header">Lorem ipsum dolor sit amet</h3>
+        <p class="section-button__texts-text">consectetur adipisicing elit, sed do elusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <a class="section-button__link" href="app.html"><button class="section-button__button">Lorem ipsum</button></a>
     </section>
-    <section>
-      <!-- features -->
+    <section id="description">
+      <div class="container section-features">
+      <div class="section-features__box">
+          <div class="section-features__box-text">
+           <i class="fa fa-check"></i>
+           <h1>Lorem ipsum dolor sit amet</h1>
+           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+         </div>
+        </div>
+        <div class="section-features__box">
+          <div class="section-features__box-text">
+            <i class="fa fa-clock"></i>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+         </div>
+       </div>
+        <div class="section-features__box">
+          <div class="section-features__box-text">
+            <i class="fa fa-list"></i>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem.  Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed.</p>
+          </div>
+        </div>
+      </div>
     </section>
     <section>
       <!-- newsletter -->
     </section>
-    <section>
+    <section id="about">
       <!-- aobut me -->
     </section>
     <section>
       <!-- three columns -->
     </section>
-    <footer>
+    <footer id="footer">
       <!-- copyright -->
     </footer>
 

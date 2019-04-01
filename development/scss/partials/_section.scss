@@ -1,0 +1,83 @@
+.section-features {
+  background: $background-color;
+  display: flex;
+  justify-content: space-evenly;
+
+  &__box {
+    height: 620px;
+    width: 350px;
+
+    &-text{
+      text-align: center;
+      color: $tabRowsText-color;
+      font-size: $text-fontSize;
+      font-family: $text-font;
+      margin-top: 135px;
+
+      .fa {
+        font-size: 70px;
+      }
+    }
+  }
+}
+.section {
+  &-carousel {
+    background-color: $background-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 5px;
+    i{
+      align-self: center;
+      font-size: 32px;
+    }
+    &__carousel {
+      flex: 0 0 60%;
+      text-align: center;
+      &-slide {
+        &:nth-child(2){
+          display: none;
+        }
+        &:nth-child(3){
+          display: none;
+        }
+      }
+      &-header {
+        font-size: 48px;
+      }
+      &-text {
+        font-size: 32px;
+      }
+    }
+  }
+  &-button {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 10px 50px 10px;
+    background-color: $navSide-color;
+    color: $whiteFont-color;
+    &__texts {
+      flex: 0 0 60%;
+      &-header {
+        font-size: 32px;
+        line-height: 64px;
+        padding: 20px 0;
+      }
+      &-text {
+        font-size: 22px;
+      }
+    }
+    &__link {
+      align-self: center;
+      text-decoration: none;
+    }
+    &__button {
+      padding: 10px 30px;
+      background-color: $highlights-color;
+      border: none;
+      color: $whiteFont-color;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+}

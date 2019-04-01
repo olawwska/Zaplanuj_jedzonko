@@ -8,3 +8,9 @@
 body{
   background-color: #BADA55;
 }
+
+@import "modules/variables";
+@import "partials/base";
+@import "partials/header";
+@import "partials/section";
+
