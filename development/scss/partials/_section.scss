@@ -20,3 +20,32 @@
     }
   }
 }
+
+.section-newsletter {
+  background: $navSide-color;
+  display: flex;
+  font-family: $text-font;
+  color: $whiteFont-color;
+  line-height: 160px;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    font-size: 50px;
+  }
+
+  input {
+    margin-left: 150px;
+    height: 55px;
+    width: 300px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 14px 55px;
+    background-color: $highlights-color;
+    color: white;
+    font-weight: 900;
+    border: none;
+  }
+}
