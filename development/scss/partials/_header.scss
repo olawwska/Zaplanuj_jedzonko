@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: $navSide-color;
+  padding: 10px 0;
+  &__logo {
+    flex: 1 0 33%;
+    padding-left: 40px;
+    h1, span {
+      font-family: $logo-font;
+      font-size: 40px;
+    }
+    h1 {
+      color: $whiteFont-color;
+    }
+    span {
+      color: $logoFont-color;
+    }
+  }
+  &__nav {
+    align-self: center;
+    flex: 1 0 66%;
+    padding-right: 40px;
+    &-list{
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 10px;
+    }
+    &-element {
+      margin: 0 20px;
+    }
+    &-link {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $whiteFont-color;
+      &:hover {
+        color: $highlights-color;
+      }
+    }
+  }
+}
