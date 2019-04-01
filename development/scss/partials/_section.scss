@@ -48,9 +48,9 @@
     font-weight: 900;
     border: none;
   }
+}
 
-.section {
-  &-carousel {
+.section-carousel {
     background-color: $background-color;
     display: flex;
     justify-content: space-between;
@@ -80,5 +80,3 @@
         font-size: 32px;
       }
     }
-  }
-}
