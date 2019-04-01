@@ -1,0 +1,37 @@
+header{
+  border: 1px solid black;
+  width: 100vw;
+  height: 100px;
+  background: $headerCol-color;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  box-sizing: border-box;
+
+  h1, span {
+    font-family: $logo-font;
+  }
+  h1 {
+    color: $whiteFont-color;
+  }
+  span, .fa-user-circle {
+    color: $logoFont-color;
+  }
+
+  .header__name{
+    display: flex;
+    justify-content: space-around;
+    width: 150px;
+    padding-top: 10px;
+    padding-right: 50px;
+
+    &-element{
+      font-size: 26px;
+      color: $whiteFont-color;
+    }
+    &-icon{
+      font-size: 50px;
+    }
+  }
+}
+

@@ -4,7 +4,9 @@
 // Sass:
 // https://fontawesome.com/how-to-use/on-the-web/using-with/sass
 
+@import "modules/all_app";
+@import "partials/header";
+@import "partials/base";
+@import "partials/section-nav_side";
 
-body{
-  background-color: #BADA55;
-}
+
