@@ -80,3 +80,36 @@
         font-size: 32px;
       }
     }
+
+  .section-button {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 10px 50px 10px;
+    background-color: $navSide-color;
+    color: $whiteFont-color;
+    &__texts {
+      flex: 0 0 60%;
+      &-header {
+        font-size: 32px;
+        line-height: 64px;
+        padding: 20px 0;
+      }
+      &-text {
+        font-size: 22px;
+      }
+    }
+    &__link {
+      align-self: center;
+      text-decoration: none;
+    }
+    &__button {
+      padding: 10px 30px;
+      background-color: $highlights-color;
+      border: none;
+      color: $whiteFont-color;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+  
+
