@@ -114,4 +114,24 @@
     }
   }
   
+.section-about {
+  background: $background-color;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 550px;
 
+  &__img {
+    height: 350px;
+    width: 350px;
+    background: #5B605F;
+  }
+
+  &__text {
+    width: 765px;
+    text-align: left;
+    font-size: $text-fontSize;
+    font-family: $text-font;
+    margin-bottom: 112px;
+  }
+}
