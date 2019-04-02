@@ -72,13 +72,14 @@
           display: none;
         }
       }
-    }
+
       &-header {
         font-size: 48px;
       }
       &-text {
         font-size: 32px;
       }
+    }
     }
 
   .section-button {
@@ -111,5 +112,69 @@
       cursor: pointer;
     }
   }
-  
+
+  .section-contact {
+    background-color: $navSide-color;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px 50px;
+    &__column {
+      flex: 0 0 25%;
+      color: $whiteFont-color;
+      display: flex;
+      flex-direction: column;
+      h4 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 24px;
+      }
+      &-list {
+        padding-left: 30px;
+      }
+      &-element {
+        font-size: 24px;
+        line-height: 42px;
+      }
+      &-form {
+        display: flex;
+        input {
+          height: 38px;
+          width: 180px;
+          padding: 0 10px;
+        }
+        button {
+          font-size: 18px;
+          padding: 6px 14px;
+          background-color: $highlights-color;
+          color: white;
+          font-weight: 900;
+          border: none;
+        }
+      }
+      &-icons {
+        font-size: 36px;
+        margin: 40px 20px;
+        i {
+          margin-right: 40px;
+        }
+      }
+
+    }
+  }
+
+  .footer {
+    background-color: $headerCol-color;
+    p {
+      padding: 20px 0;
+      text-align: center;
+      color: $whiteFont-color;
+      font-size: 20px;
+      span {
+        color: $highlights-color;
+      }
+    }
+  }
 
