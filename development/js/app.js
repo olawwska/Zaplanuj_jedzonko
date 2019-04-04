@@ -40,19 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //Poniżej widok główny
 
-    widgetRecipes.addEventListener("click", function () {
+    // widgetRecipes.addEventListener("click", function () {
+    //
+    //         backToApp.style.display = "none";
+    //
+    // }); //po naciśnięciu widzetu dodaj przepis przenosimy się na odpowiednią stronę
 
-            backToApp.style.display = "none";
 
-    }); //po naciśnięciu widzetu dodaj przepis przenosimy się na odpowiednią stronę
-
-
-
-    widgetPlan.addEventListener("click", function () {
-
-            backToApp.style.display = "none";
-
-    }); //po naciśnięciu widzetu dodaj plan,przenosimy się na odpowiednią stronę
+    //
+    // widgetPlan.addEventListener("click", function () {
+    //
+    //         backToApp.style.display = "none";
+    //
+    // }); //po naciśnięciu widzetu dodaj plan,przenosimy się na odpowiednią stronę
 
 
 /// pobrać element div recipes od zuzi i dodać do kliknięcia na display block
