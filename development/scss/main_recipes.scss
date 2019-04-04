@@ -1,0 +1,134 @@
+@import "modules/variables";
+@import "partials/base";
+
+.new__recipes {
+  font-family: 'Open Sans', sans-serif;
+  width: 1060px;
+  height: 620px;
+  padding: 25px;
+  background-color: $background-color;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: $navSide-color;
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $navSide-color;
+  }
+  &__recipe {
+    width: 100%;
+    &-header{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid $tabRowsText-color;
+      h2 {
+      color: $highlights-color;
+      }
+      &-button {
+        align-self: flex-start;
+        background-color: $highlights-color;
+        border: none;
+        color: $whiteFont-color;
+        font-size: 16px;
+        padding: 4px 10px;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px 0;
+      label {
+        font-size: 24px;
+        margin: 0 15px 0 5px;
+      }
+      input {
+        width: 720px;
+        line-height: 30px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      textarea {
+        resize: none;
+        width: 720px;
+        height: 72px;
+        margin-left: 23px;
+      }
+    }
+  }
+  &__method {
+    flex: 0 0 48%;
+    height: 66%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-weight: 100;
+      border-bottom: 2px solid $tabRowsText-color;
+    }
+    &-form {
+      margin: 10px 5px 10px 10px;
+      display: flex;
+      justify-content: space-between;
+      textarea {
+        resize: none;
+        width: 93%;
+        height: 76px;
+      }
+      i {
+        color: $successMessage-color;
+        font-size: 28px;
+        cursor: pointer;
+      }
+    }
+
+    ol {
+      width: 100%;
+      padding-left: 30px;
+      overflow-y: scroll;
+      flex-grow: 1;
+    }
+    li {
+
+    }
+  }
+  &__ingredients {
+    flex: 0 0 48%;
+    height: 66%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-weight: 100;
+      border-bottom: 2px solid $tabRowsText-color;
+    }
+    &-form {
+      margin: 10px 5px 61px 10px;
+      display: flex;
+      justify-content: space-between;
+      input {
+        width: 93%;
+        height: 25px;
+      }
+      i {
+        color: $successMessage-color;
+        font-size: 28px;
+        cursor: pointer;
+      }
+    }
+    ul {
+      width: 100%;
+      padding-left: 30px;
+      overflow-y: scroll;
+      flex-grow: 1;
+    }
+    li {
+
+    }
+  }
+}
