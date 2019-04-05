@@ -1,0 +1,101 @@
+// CDN FONTAWESOME
+// <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+//
+// Sass:
+// https://fontawesome.com/how-to-use/on-the-web/using-with/sass
+
+@import "modules/all_app";
+@import "partials/header_app";
+@import "partials/base_app";
+@import "partials/section__main_app";
+
+
+.section__background-img {
+  flex: 1 0 80%;
+  height: 100%;
+  background-image: url('../images/image.png');
+  position: relative;
+
+  &-allRecipes {
+    height: 91%;
+    width: 87%;
+    border: 1px dashed black;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background: $background-color;
+    text-align: center;
+    font-family: $text-font;
+    padding: 15px 35px;
+    display: flex;
+    flex-direction: column;
+    &-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 2px solid $tabRowsText-color;
+      margin-bottom: 14px;
+      h2 {
+        font-size: 24px;
+        text-transform: uppercase;
+        color: $highlights-color;
+        font-weight: bold;
+      }
+      a{
+        align-self: center;
+        text-decoration: none;
+        color: $successMessage-color;
+        .addRecipeBTN {
+          font-size: 36px;
+        }
+      }
+    }
+    &-tableContainer {
+      flex-grow: 1;
+      padding: 0 10px;
+      overflow-y: scroll;
+    }
+    &-table{
+      table-layout: fixed;
+      width: 100%;
+      max-height: 100%;
+      border-collapse: collapse;
+      color: $tabRowsText-color;
+      font-size: 16px;
+      span {
+        cursor: pointer;
+      }
+      tr{
+        text-align: left;
+        &:first-of-type {
+          height: 50px;
+        }
+      }
+      th {
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $navSide-color;
+        font-weight: bold;
+        &:first-of-type {
+          width: 5%;
+        }
+        &:nth-of-type(3) {
+          width: 50%;
+        }
+        &:last-of-type {
+          width: 11%;
+        }
+      }
+      td, th {
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        border-color: $tabRowsText-color;
+      }
+      td {
+        padding: 10px 0;
+      }
+    }
+
+  }
+}
