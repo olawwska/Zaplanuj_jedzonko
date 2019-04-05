@@ -1,10 +1,21 @@
 @import "modules/variables";
 @import "partials/base";
-
+.section__background-img {
+  flex: 1 0 80%;
+  height: 100%;
+  background-image: url('../images/image.png');
+  position: relative;
+}
 .new__recipes {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
   font-family: 'Open Sans', sans-serif;
-  width: 1060px;
-  height: 620px;
+  width: 87%;
+  //width: 1060px;
+  height: 91%;
+  //height: 620px;
   padding: 25px;
   background-color: $background-color;
   border: 1px solid black;
@@ -64,7 +75,7 @@
   &__method {
     flex: 0 0 48%;
     height: 66%;
-    align-self: flex-end;
+    //align-self: flex-end;
     display: flex;
     flex-direction: column;
     h2 {
@@ -100,7 +111,7 @@
   &__ingredients {
     flex: 0 0 48%;
     height: 66%;
-    align-self: flex-end;
+    //align-self: flex-end;
     display: flex;
     flex-direction: column;
     h2 {

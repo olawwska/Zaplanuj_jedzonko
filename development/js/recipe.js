@@ -34,6 +34,7 @@ addIngredientBtn.addEventListener("click", function(e) {
     newRecipe.ingredients.push(ingredient.value);
     // renderowanie elementu na liście
     renderSingleIngredient(ingredient.value);
+    ingredient.value = "";
 });
 
 //to samo dla methods
@@ -50,6 +51,7 @@ addMethodBtn.addEventListener("click", function (e) {
     newRecipe.methods.push(method.value);
     // renderujemy element na liście
     renderSingleMethod(method.value);
+    method.value = "";
 });
 
 //funkcja pomocnicza- odbiera obiekt newRecipe i dodaje go do localStorage
@@ -78,4 +80,6 @@ saveRecipeBtn.addEventListener("click", function (e) {
     newRecipe.recipeTitle = recipeName.value;
     newRecipe.recipeDescription = desciption.value;
     saveRecipeToLocalStorage(newRecipe);
+    recipeName.value = "";
+    desciption.value = "";
 });
