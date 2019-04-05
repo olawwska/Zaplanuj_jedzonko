@@ -20,6 +20,25 @@ document.addEventListener('DOMContentLoaded', function () {
     var friday = weekDays[5].querySelectorAll('td > select');
     var saturday = weekDays[6].querySelectorAll('td > select');
     var sunday = weekDays[7].querySelectorAll('td > select');
+    var selects = document.querySelectorAll('td > select');
+
+    var recipesLocalStorage = localStorage.getItem('recipes');
+    var  recipesLocalStorageObject = JSON.parse(localStorage.getItem('recipes'));
+
+    var listOfRecipeTitles = [];
+    for (var i = 0; i < recipesLocalStorageObject.length; i++) {
+            listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
+    }
+
+    window.addEventListener('load', function() {
+        for (var i = 0; i < selects.length; i++) {
+            for (var j = 0; j < listOfRecipeTitles.length; j++) {
+                var option = document.createElement('option');
+                option.innerText = listOfRecipeTitles[j];
+                selects[i].appendChild(option);
+            }
+        }
+    });
 
     // reference to selected option CZĘŚC POMOCNICZA
     // 1. console.log(monday[1].options); odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
