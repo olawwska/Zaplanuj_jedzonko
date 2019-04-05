@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Zaplanuj Jedzonko</title>
-    <link rel="stylesheet" href="./css/main_app.css" />
     <link rel="stylesheet" href="./css/main_recipes.css" />
     <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
@@ -29,23 +28,23 @@
         <div class="section__nav-side">
             <ul class="section__nav-side-list">
                 <li class="section__nav-side-list-element">
-                    <a>Pulpit</a>
+                    <a href="app.html">Pulpit</a>
                 </li>
                 <li class="section__nav-side-list-element">
-                    <a>Przepisy</a>
+                    <a href="allRecipes.html">Przepisy</a>
                 </li>
                 <li class="section__nav-side-list-element">
-                    <a>Plany</a>
+                    <a href="schedules.html">Plany</a>
                 </li>
             </ul>
         </div>
 
         <div class="section__background-img">
-         <div class="new__recipes">
-          <div class="new__recipes__recipe">
-            <div class="new__recipes__recipe-header">
+         <div class="section__background-img-new__recipes">
+          <div class="section__background-img-new__recipes__recipe">
+            <div class="section__background-img-new__recipes__recipe-header">
                 <h2>Nowy przepis</h2>
-                <button class="new__recipes__recipe-header-button">Zapisz i zamknij</button>
+                <a href="allRecipes.html"><button class="section__background-img-new__recipes__recipe-header-button">Zapisz i zamknij</button></a>
             </div>
             <form action="">
                 <label>Nazwa przepisu</label>
@@ -54,22 +53,22 @@
                 <textarea name="recipe-description" id="recipe-description" cols="30" rows="3" maxlength="360"></textarea>
             </form>
             </div>
-            <div class="new__recipes__method">
+            <div class="section__background-img-new__recipes__method">
                 <h2>Instrukcje</h2>
-                <div class="new__recipes__method-form">
+                <div class="section__background-img-new__recipes__method-form">
                 <textarea cols="30" rows="3" id="method" name="method" maxlength="150"></textarea>
                 <i class="fas fa-plus-square addMethod"></i>
                  </div>
-                 <ol class="new__recipes__method-list">
+                 <ol class="section__background-img-new__recipes__method-list">
                  </ol>
              </div>
-              <div class="new__recipes__ingredients">
+              <div class="section__background-img-new__recipes__ingredients">
              <h2>składniki</h2>
-             <div class="new__recipes__ingredients-form">
+             <div class="section__background-img-new__recipes__ingredients-form">
                 <input type="text" id="ingredients" name="ingredients" maxlength="50">
                 <i class="fas fa-plus-square addIngredient"></i>
                 </div>
-             <ul class="new__recipes__ingredients-list">
+             <ul class="section__background-img-new__recipes__ingredients-list">
              </ul>
          </div>
         </div>

@@ -1,12 +1,15 @@
-@import "modules/variables";
-@import "partials/base";
+@import "modules/all_app";
+@import "partials/header_app";
+@import "partials/base_app";
+@import "partials/section__main_app";
+
 .section__background-img {
   flex: 1 0 80%;
   height: 100%;
   background-image: url('../images/image.png');
   position: relative;
-}
-.new__recipes {
+
+ &-new__recipes {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -17,8 +20,9 @@
   height: 91%;
   //height: 620px;
   padding: 25px;
+  box-sizing: border-box;
   background-color: $background-color;
-  border: 1px solid black;
+  border: 1px dashed black;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -30,7 +34,9 @@
   }
   &__recipe {
     width: 100%;
+    box-sizing: border-box;
     &-header{
+      box-sizing: border-box;
       display: flex;
       justify-content: space-between;
       border-bottom: 2px solid $tabRowsText-color;
@@ -38,6 +44,7 @@
       color: $highlights-color;
       }
       &-button {
+        box-sizing: border-box;
         align-self: flex-start;
         background-color: $highlights-color;
         border: none;
@@ -51,6 +58,7 @@
       }
     }
     form {
+      box-sizing: border-box;
       display: flex;
       flex-wrap: wrap;
       padding: 10px 0;
@@ -73,6 +81,7 @@
     }
   }
   &__method {
+    box-sizing: border-box;
     flex: 0 0 48%;
     height: 66%;
     //align-self: flex-end;
@@ -99,6 +108,7 @@
     }
 
     ol {
+      box-sizing: border-box;
       width: 100%;
       padding-left: 30px;
       overflow-y: scroll;
@@ -109,6 +119,7 @@
     }
   }
   &__ingredients {
+    box-sizing: border-box;
     flex: 0 0 48%;
     height: 66%;
     //align-self: flex-end;
@@ -133,6 +144,7 @@
       }
     }
     ul {
+      box-sizing: border-box;
       width: 100%;
       padding-left: 30px;
       overflow-y: scroll;
@@ -142,4 +154,5 @@
 
     }
   }
+}
 }

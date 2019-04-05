@@ -5,13 +5,13 @@ var ingredient = document.getElementById("ingredients");
 var method = document.getElementById("method");
 
 //lista nowych
-var newIngredientsList = document.querySelector(".new__recipes__ingredients-list");
-var newMethodList = document.querySelector(".new__recipes__method-list");
+var newIngredientsList = document.querySelector(".section__background-img-new__recipes__ingredients-list");
+var newMethodList = document.querySelector(".section__background-img-new__recipes__method-list");
 
 //przyciski
 var addIngredientBtn = document.querySelector(".addIngredient");
 var addMethodBtn = document.querySelector(".addMethod");
-var saveRecipeBtn = document.querySelector(".new__recipes__recipe-header-button");
+var saveRecipeBtn = document.querySelector(".section__background-img-new__recipes__recipe-header-button");
 
 //obiekt przepisu
 var newRecipe = {
@@ -24,16 +24,38 @@ var newRecipe = {
 //renderowanie nowych składników na liście
 function renderSingleIngredient(ingredient) {
     var newLi = document.createElement("Li");
-    newLi.innerText = ingredient;
+    newLi.innerText = ingredient.value;
+    var editIconIngredient = document.createElement("span");
+    var trashIconIngredient = document.createElement("span");
+    editIconIngredient.classList.add("fas");
+    editIconIngredient.classList.add("fa-edit");
+    editIconIngredient.style.color = '#E58A20';
+    editIconIngredient.style.paddingLeft = '8px';
+    trashIconIngredient.classList.add("far");
+    trashIconIngredient.classList.add("fa-trash-alt");
+    trashIconIngredient.style.color = '#BD4932';
+    trashIconIngredient.style.paddingLeft = '8px';
+    newLi.appendChild(editIconIngredient);
+    newLi.appendChild(trashIconIngredient);
+
+    editIconIngredient.addEventListener("click", function () {
+        this.parentElement.setAttribute("contenteditable", "true")
+    });
+
+    trashIconIngredient.addEventListener("click", function () {
+        this.parentElement.remove();
+    });
+
+
     newIngredientsList.appendChild(newLi);
 }
 //guzik dodawania nowego składnika
 addIngredientBtn.addEventListener("click", function(e) {
     e.preventDefault();
-    //zapisanie składnika do tablicy w obiekcie całego przepisu
-    newRecipe.ingredients.push(ingredient.value);
+    //zapisanie składnika do tablicy w obiekcie całego przepisu -zrobiłam inaczej, przeniosłam do całego guzika saveRecipeBtn
+    // newRecipe.ingredients.push(ingredient.value);
     // renderowanie elementu na liście
-    renderSingleIngredient(ingredient.value);
+    renderSingleIngredient(ingredient);
     ingredient.value = "";
 });
 
@@ -41,16 +63,37 @@ addIngredientBtn.addEventListener("click", function(e) {
 //renderowanie nowych instrukcji na liście
 function renderSingleMethod(method) {
     var newLi = document.createElement("Li");
-    newLi.innerText = method;
+    newLi.innerText = method.value;
+    var editIconMethod = document.createElement("span");
+    var trashIconMethod = document.createElement("span");
+    editIconMethod.classList.add("fas");
+    editIconMethod.classList.add("fa-edit");
+    editIconMethod.style.color = '#E58A20';
+    editIconMethod.style.paddingLeft = '8px';
+    trashIconMethod.classList.add("far");
+    trashIconMethod.classList.add("fa-trash-alt");
+    trashIconMethod.style.color = '#BD4932';
+    trashIconMethod.style.paddingLeft = '8px';
+    newLi.appendChild(editIconMethod);
+    newLi.appendChild(trashIconMethod);
+
+    editIconMethod.addEventListener("click", function () {
+        this.parentElement.setAttribute("contenteditable", "true")
+    });
+
+    trashIconMethod.addEventListener("click", function () {
+        this.parentElement.remove();
+    });
+
     newMethodList.appendChild(newLi);
 }
 //guzik dodawania nowej instrukcji
 addMethodBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    // zapisanie instrukcji do tablicy w obiekcie całego przepisu
-    newRecipe.methods.push(method.value);
+    // zapisanie instrukcji do tablicy w obiekcie całego przepisu -zrobiłam inaczej, przeniosłam do całego guzika saveRecipeBtn
+    // newRecipe.methods.push(method.value);
     // renderujemy element na liście
-    renderSingleMethod(method.value);
+    renderSingleMethod(method);
     method.value = "";
 });
 
@@ -79,7 +122,17 @@ saveRecipeBtn.addEventListener("click", function (e) {
     e.preventDefault();
     newRecipe.recipeTitle = recipeName.value;
     newRecipe.recipeDescription = desciption.value;
+    Array.from(newMethodList.children).forEach(function(li){
+        newRecipe.methods.push(li.innerText);
+        li.remove();
+    });
+    Array.from(newIngredientsList.children).forEach(function(li){
+        newRecipe.ingredients.push(li.innerText);
+        li.remove();
+    });
     saveRecipeToLocalStorage(newRecipe);
+    
     recipeName.value = "";
     desciption.value = "";
+    window.location= "allRecipes.html";
 });
