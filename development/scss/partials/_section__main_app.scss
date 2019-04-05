@@ -168,6 +168,10 @@
             font-size: 18px;
           }
         }
+
+        .font-awsome:hover {
+          cursor: pointer;
+        }
       }
 
       &-info-widget {
@@ -245,6 +249,10 @@
 
           .next {
             padding-right: 15px;
+          }
+
+          .previous:hover, .next:hover {
+            cursor: pointer;
           }
         }
 
