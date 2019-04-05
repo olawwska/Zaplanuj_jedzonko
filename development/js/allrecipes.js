@@ -38,7 +38,18 @@ function renderAllRecipes() {
         var cellIcon = document.createElement('td');
         cellIcon.appendChild(editIcon);
         cellIcon.appendChild(trashIcon);
+        //próba dodania akcji do przycisków- jak???
+        // editIcon.addEventListener("click", function () {
+        //     // this.parentElement.parentElement
+        //     // window.location= "recipes.html";
+        // });
+        // trashIcon.addEventListener("click", function () {
+        //     localStorage.removeItem(recipe);
+        //     this.parentElement.parentElement.remove();
+        // });
+
         row.appendChild(cellIcon);
+
         allRecipesTable.appendChild(row);
     }
 }
