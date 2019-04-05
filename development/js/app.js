@@ -54,26 +54,44 @@ document.addEventListener("DOMContentLoaded", function () {
         var allRecipes = JSON.parse(localStorage.getItem("recipes"));
         console.log(allRecipes);
 
-        numberOfRecipes.innerText = allRecipes.length
+        numberOfRecipes.innerText = allRecipes.length;
 
     });
 
 
+    //Zadanie 3.3 znikanie widzetów po naciśnięciu krzyżyka
+
+        var infoWidget = document.querySelector(".section__background-img-back-to-app-info-widget");
+        var warningWidget = document.querySelector(".section__background-img-back-to-app-warning-widget");
+        var successWidget = document.querySelector(".section__background-img-back-to-app-success-widget");
+        var deleteIcon = document.querySelectorAll(".font-awsome");
+
+        deleteIcon[0].addEventListener('click', function (){
+
+            infoWidget.style.display = "none";
+        });
+
+        deleteIcon[1].addEventListener('click', function (){
+
+            warningWidget.style.display = "none";
+        });
+
+        deleteIcon[2].addEventListener('click', function (){
+
+            successWidget.style.display = "none";
+        });
 
 
 
+    //Zadanie 7.1 Zaciąganie nr tygodnia
 
+        // var weekNumber = document.querySelector(".weekNumber");
+        //
+        // var LSweekNumber = localStorage.getItem("weekNumber");
+        //
+        // weekNumber.innerText = LSweekNumber;
 
-
-
-
-
-
-
-
-
-
-
-
+        // var next = document.querySelector(".next");
+        // var previous = document.querySelector(".previous");
 
 });
