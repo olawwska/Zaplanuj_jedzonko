@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var sunday = weekDays[7].querySelectorAll('td > select');
     var selects = document.querySelectorAll('td > select');
 
+
     var recipesLocalStorage = localStorage.getItem('recipes');
     var  recipesLocalStorageObject = JSON.parse(localStorage.getItem('recipes'));
 
@@ -30,19 +31,33 @@ document.addEventListener('DOMContentLoaded', function () {
             listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
     }
 
-    window.addEventListener('load', function() {
-        for (var i = 0; i < selects.length; i++) {
-            for (var j = 0; j < listOfRecipeTitles.length; j++) {
-                var option = document.createElement('option');
-                option.innerText = listOfRecipeTitles[j];
-                selects[i].appendChild(option);
-            }
+    //funkcja pobierajaca nazwy przepisow i wypychajaca je do listy rozwijanej w selectcie
+
+    for (var i = 0; i < selects.length; i++) {
+        for (var j = 0; j < listOfRecipeTitles.length; j++) {
+            var option = document.createElement('option');
+            option.innerText = listOfRecipeTitles[j];
+            selects[i].appendChild(option);
         }
-    });
+    }
+
+    // window.addEventListener('load', function() {
+    //     for (var i = 0; i < selects.length; i++) {
+    //         for (var j = 0; j < listOfRecipeTitles.length; j++) {
+    //             var option = document.createElement('option');
+    //             option.innerText = listOfRecipeTitles[j];
+    //             selects[i].appendChild(option);
+    //         }
+    //     }
+    // });
+
 
     // reference to selected option CZĘŚC POMOCNICZA
-    // 1. console.log(monday[1].options); odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
-    // 2. console.log(monday[1].options[monday[1].selectedIndex]);  odwołuję się do WYBRANEJ OPCJI z listy rozwijanej dla śniadania (bo od 1) w poniedziałek
+    console.log(monday[1].options);
+    // odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
+    console.log(monday[1].options[monday[1].selectedIndex]);
+
+    // odwołuję się do WYBRANEJ OPCJI z listy rozwijanej dla śniadania (bo od 1) w poniedziałek
 
     console.log(monday[1].options[monday[1].selectedIndex].innerText);
     //3. odwołuję się do wartości inner text dla elementu określonego w poprzednim kroku, czyli wybranej opcji z listy rozwijanej dla - poniedziałek śniadanie
