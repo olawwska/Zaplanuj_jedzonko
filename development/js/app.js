@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         backToApp.style.display = "block";
 
+        if (savedData == null) {
+
+            firstTimeInApp.style.display = "block";
+
+            backToApp.style.display = "none";
+
+        }
+
 
 
         //Zadanie 3.3 Zaciąganie liczby przepisów do niebieskiego widżetu strony głównej
@@ -166,8 +174,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
+    next.addEventListener('click', function () {
+
+        console.log(schedules[i]);
+
+    });
+
+    previous.addEventListener('click', function () {
 
 
+
+    });
 
 
 
