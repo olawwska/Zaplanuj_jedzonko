@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="./css/allSchedules.css" />
+    <link href="https://fonts.googleapis.com/css?family=Charmonman|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+<body>
+<header class="header">
+    <div class="header__logo">
+        <h1>Zaplanuj <span>Jedzonko</span></h1>
+    </div>
+    <div class="header__name">
+        <div class="header__name-element">Imię</div>
+        <i class="header__name-icon fas fa-user-circle"></i>
+    </div>
+</header>
+
+<section class="section__main">
+
+    <div class="section">
+
+
+        <div class="section__nav-side">
+            <ul class="section__nav-side-list">
+                <li class="section__nav-side-list-element">
+                    <a href="app.html">Pulpit</a>
+                </li>
+                <li class="section__nav-side-list-element">
+                    <a href="allRecipes.html">Przepisy</a>
+                </li>
+                <li class="section__nav-side-list-element">
+                    <a href="#">Plany</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section__background-img">
+            <div class="section__background-img-allSchedules">
+                <div class="section__background-img-allSchedules-header">
+                    <h2>lista planów</h2>
+                    <a href="recipes.html"><i class="fas fa-plus-square addRecipeBTN"></i></a>
+                </div>
+                <div class="section__background-img-allSchedules-tableContainer">
+                    <table class="section__background-img-allSchedules-table">
+                        <tbody>
+                        <tr class="section__background-img-allSchedules-row">
+                            <th class="section__background-img-allSchedules-table-header" scope="col">Id</th>
+                            <th class="section__background-img-allSchedules-table-header" scope="col">Nazwa</th>
+                            <th class="section__background-img-allSchedules-table-header" scope="col">Opis</th>
+                            <th class="section__background-img-allSchedules-table-header" scope="col">Tydzień</th>
+                            <th class="section__background-img-allSchedules-table-header" scope="col">Akcje</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<script src="./js/allSchedules.js"></script>
+</body>
+</html>

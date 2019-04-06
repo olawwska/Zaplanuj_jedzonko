@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var planName = document.getElementById("plan-name");
     var planDescription = document.getElementById("plan-description");
     var weekNumber = document.getElementById('week-number');
-    console.log(weekNumber);
-    var id = 1;
 
     //button
     var addPlanButton = document.getElementById('savePlan');
