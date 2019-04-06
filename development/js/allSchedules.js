@@ -4,7 +4,7 @@ var allPlans = JSON.parse(localStorage.getItem("schedules"));
 console.log(allPlans);
 var allPlansTable = document.querySelector(".section__background-img-allSchedules-table");
 
-//funkcja nadająca odpowiednie id przepisom
+//funkcja nadająca odpowiednie id planom
 for (var i = 0; i < allPlans.length; i++) {
     allPlans[i].id = i + 1;
 }
@@ -12,11 +12,11 @@ for (var i = 0; i < allPlans.length; i++) {
 function renderAllPlans() {
     var allPlans = JSON.parse(localStorage.getItem("schedules"));
     var allPlansTable = document.querySelector(".section__background-img-allSchedules-table");
-    //nadanie właściwego id przepisom
+    //nadanie właściwego id planom
     for (var k = 0; k < allPlans.length;k++) {
         allPlans[k].id = k + 1;
     }
-    //ustawienie planow w tabeli okna lista przepisów
+    //ustawienie planow w tabeli okna lista planow
     for (var i = 0; i < allPlans.length; i++) {
         var plan = allPlans[i];
         var row = document.createElement('tr');
