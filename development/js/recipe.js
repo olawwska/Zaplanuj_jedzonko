@@ -1,8 +1,8 @@
 //pola input
 var recipeName = document.getElementById("recipe-name");
 var description = document.getElementById("recipe-description");
-var ingredient = document.getElementById("ingredients").value;
-var method = document.getElementById("method").value;
+var ingredient = document.getElementById("ingredients");
+var method = document.getElementById("method");
 
 //lista nowych
 var newIngredientsList = document.querySelector(".section__background-img-new__recipes__ingredients-list");
@@ -24,7 +24,7 @@ var newRecipe = {
 //renderowanie nowych składników na liście
 function renderSingleIngredient(ingredient) {
     var newLi = document.createElement("Li");
-    newLi.innerText = ingredient;
+    newLi.innerText = ingredient.value;
     var editIconIngredient = document.createElement("span");
     var trashIconIngredient = document.createElement("span");
     editIconIngredient.classList.add("fas");
@@ -63,7 +63,7 @@ addIngredientBtn.addEventListener("click", function(e) {
 //renderowanie nowych instrukcji na liście
 function renderSingleMethod(method) {
     var newLi = document.createElement("Li");
-    newLi.innerText = method;
+    newLi.innerText = method.value;
     var editIconMethod = document.createElement("span");
     var trashIconMethod = document.createElement("span");
     editIconMethod.classList.add("fas");
@@ -126,16 +126,58 @@ window.addEventListener('load', function () {
         description.value = toEditFromLS.recipeDescription;
 
         for (var i = 0; i < toEditFromLS.ingredients.length; i++) {
-            // var newLi = document.createElement("Li");
-            // newLi.innerText = toEditFromLS.ingredients[i];
-            // newIngredientsList.appendChild(newLi);
-            renderSingleIngredient(toEditFromLS.ingredients[i]);
+            var newLi = document.createElement("Li");
+            newLi.innerText = toEditFromLS.ingredients[i];
+            var editIconIngredient = document.createElement("span");
+            var trashIconIngredient = document.createElement("span");
+            editIconIngredient.classList.add("fas");
+            editIconIngredient.classList.add("fa-edit");
+            editIconIngredient.style.color = '#E58A20';
+            editIconIngredient.style.paddingLeft = '8px';
+            trashIconIngredient.classList.add("far");
+            trashIconIngredient.classList.add("fa-trash-alt");
+            trashIconIngredient.style.color = '#BD4932';
+            trashIconIngredient.style.paddingLeft = '8px';
+            newLi.appendChild(editIconIngredient);
+            newLi.appendChild(trashIconIngredient);
+
+            editIconIngredient.addEventListener("click", function () {
+                this.parentElement.setAttribute("contenteditable", "true")
+            });
+
+            trashIconIngredient.addEventListener("click", function () {
+                this.parentElement.remove();
+            });
+            newIngredientsList.appendChild(newLi);
+            // renderSingleIngredient(toEditFromLS.ingredients[i]);
         }
         for (var j = 0; j < toEditFromLS.methods.length; j++) {
-            // var newLi = document.createElement("Li");
-            // newLi.innerText = toEditFromLS.ingredients[i];
-            // newIngredientsList.appendChild(newLi);
-            renderSingleMethod(toEditFromLS.methods[j]);
+            var newLiMethod = document.createElement("Li");
+            newLiMethod.innerText = toEditFromLS.methods[j];
+            var editIconMethod = document.createElement("span");
+            var trashIconMethod = document.createElement("span");
+            editIconMethod.classList.add("fas");
+            editIconMethod.classList.add("fa-edit");
+            editIconMethod.style.color = '#E58A20';
+            editIconMethod.style.paddingLeft = '8px';
+            trashIconMethod.classList.add("far");
+            trashIconMethod.classList.add("fa-trash-alt");
+            trashIconMethod.style.color = '#BD4932';
+            trashIconMethod.style.paddingLeft = '8px';
+            newLiMethod.appendChild(editIconMethod);
+            newLiMethod.appendChild(trashIconMethod);
+
+            editIconMethod.addEventListener("click", function () {
+                this.parentElement.setAttribute("contenteditable", "true")
+            });
+
+            trashIconMethod.addEventListener("click", function () {
+                this.parentElement.remove();
+            });
+
+            newMethodList.appendChild(newLiMethod);
+            //albo poprawić:
+            // renderSingleMethod(toEditFromLS.methods[j]);
         }
         //dodać jeszcze, że przy zapisie tego edytowanego przepisu, jest on zamieniany z istniejącym, a nie dodawany jako nowy!!
         localStorage.removeItem("toEdit");
