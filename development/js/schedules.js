@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var listOfRecipeTitles = [];
     for (var i = 0; i < recipesLocalStorageObject.length; i++) {
-            listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
+        listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
     }
 
     //funkcja pobierajaca nazwy przepisow i wypychajaca je do listy rozwijanej w selectcie
@@ -81,8 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // tworzę konstruktor Schedule, do ktorego przekazuję jako argumenty id i referencje do inputow z nazwa planu numerem tygodnia i opisem planu, w ciele tworze pary klucz-wartosc gdzie - klucz id ma przekazana wartosc zmiennej id, klucz title description i week number maja przypisane wartosci inputow a klucz monday-sunday maja przypisane tablice z selectami danych dni tygodnia (czyli posilkami wybranymi na dany dzien)
 
 
-    function Schedule(id, weekNumber, planName, planDescription) {
-        this.id = id;
+    function Schedule(weekNumber, planName, planDescription) {
         this.title = planName;
         this.description = planDescription;
         this.weekNumber = weekNumber;
@@ -120,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addPlanButton.addEventListener('click', function (e) {
         e.preventDefault();
         var allPlans = [];
-        var newPlan = new Schedule(allPlans.length + 1, weekNumber.value, planName.value, planDescription.value);
+        var newPlan = new Schedule(weekNumber.value, planName.value, planDescription.value);
         newPlan.monday = recipesOfMonday;
         newPlan.tuesday = recipesOfTuesday;
         newPlan.wednesday = recipesOfWednesday;

@@ -1,22 +1,29 @@
 
 //zadanie 8.1 wyświetlanie listy planow
-var allSchedules = JSON.parse(localStorage.getItem("schedules"));
-console.log(allSchedules);
-console.log(allSchedules[1].id);
-var allSchedulesTable = document.querySelector(".section__background-img-allSchedules-table");
+var allPlans = JSON.parse(localStorage.getItem("schedules"));
+console.log(allPlans);
+var allPlansTable = document.querySelector(".section__background-img-allSchedules-table");
 
+//funkcja nadająca odpowiednie id przepisom
+for (var i = 0; i < allPlans.length; i++) {
+    allPlans[i].id = i + 1;
+}
 
-function renderAllSchedules() {
-    var allSchedules = JSON.parse(localStorage.getItem("schedules"));
-    var allSchedulesTable = document.querySelector(".section__background-img-allSchedules-table");
+function renderAllPlans() {
+    var allPlans = JSON.parse(localStorage.getItem("schedules"));
+    var allPlansTable = document.querySelector(".section__background-img-allSchedules-table");
+    //nadanie właściwego id przepisom
+    for (var k = 0; k < allPlans.length;k++) {
+        allPlans[k].id = k + 1;
+    }
     //ustawienie planow w tabeli okna lista przepisów
-    for (var i = 0; i < allSchedules.length; i++) {
-        var schedule = allSchedules[i];
+    for (var i = 0; i < allPlans.length; i++) {
+        var plan = allPlans[i];
         var row = document.createElement('tr');
         var properties = ['id', 'title', 'description', 'weekNumber'];
         for (var j = 0; j < properties.length; j++) {
             var cell = document.createElement('td');
-            cell.innerText = schedule[properties[j]];
+            cell.innerText = plan[properties[j]];
             row.appendChild(cell);
         }
         var editIcon = document.createElement('span');
@@ -33,8 +40,8 @@ function renderAllSchedules() {
         cellIcon.appendChild(editIcon);
         cellIcon.appendChild(trashIcon);
         row.appendChild(cellIcon);
-        allSchedulesTable.appendChild(row);
+        allPlansTable.appendChild(row);
     }
 
 }
-renderAllSchedules();
+renderAllPlans();
