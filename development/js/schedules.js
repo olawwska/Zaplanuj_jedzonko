@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
     }
 
-    //funkcja pobierajaca nazwy przepisow i wypychajaca je do listy rozwijanej w selectcie
+
 
     for (var i = 0; i < selects.length; i++) {
         for (var j = 0; j < listOfRecipeTitles.length; j++) {
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
             selects[i].appendChild(option);
         }
     }
+
 
     // window.addEventListener('load', function() {
     //     for (var i = 0; i < selects.length; i++) {
@@ -48,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //         }
     //     }
     // });
-
 
     // reference to selected option CZĘŚC POMOCNICZA
     console.log(monday[1].options);
