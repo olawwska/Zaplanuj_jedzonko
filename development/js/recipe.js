@@ -1,8 +1,8 @@
 //pola input
 var recipeName = document.getElementById("recipe-name");
-var desciption = document.getElementById("recipe-description");
-var ingredient = document.getElementById("ingredients");
-var method = document.getElementById("method");
+var description = document.getElementById("recipe-description");
+var ingredient = document.getElementById("ingredients").value;
+var method = document.getElementById("method").value;
 
 //lista nowych
 var newIngredientsList = document.querySelector(".section__background-img-new__recipes__ingredients-list");
@@ -24,7 +24,7 @@ var newRecipe = {
 //renderowanie nowych składników na liście
 function renderSingleIngredient(ingredient) {
     var newLi = document.createElement("Li");
-    newLi.innerText = ingredient.value;
+    newLi.innerText = ingredient;
     var editIconIngredient = document.createElement("span");
     var trashIconIngredient = document.createElement("span");
     editIconIngredient.classList.add("fas");
@@ -63,7 +63,7 @@ addIngredientBtn.addEventListener("click", function(e) {
 //renderowanie nowych instrukcji na liście
 function renderSingleMethod(method) {
     var newLi = document.createElement("Li");
-    newLi.innerText = method.value;
+    newLi.innerText = method;
     var editIconMethod = document.createElement("span");
     var trashIconMethod = document.createElement("span");
     editIconMethod.classList.add("fas");
@@ -118,10 +118,34 @@ function saveRecipeToLocalStorage(newObject) {
     alert("przepis zapisano");
 }
 
+window.addEventListener('load', function () {
+    if (localStorage.getItem("toEdit") != null) {
+        var toEditFromLS = JSON.parse(localStorage.getItem("toEdit"));
+        console.log(toEditFromLS);
+        recipeName.value = toEditFromLS.recipeTitle;
+        description.value = toEditFromLS.recipeDescription;
+
+        for (var i = 0; i < toEditFromLS.ingredients.length; i++) {
+            // var newLi = document.createElement("Li");
+            // newLi.innerText = toEditFromLS.ingredients[i];
+            // newIngredientsList.appendChild(newLi);
+            renderSingleIngredient(toEditFromLS.ingredients[i]);
+        }
+        for (var j = 0; j < toEditFromLS.methods.length; j++) {
+            // var newLi = document.createElement("Li");
+            // newLi.innerText = toEditFromLS.ingredients[i];
+            // newIngredientsList.appendChild(newLi);
+            renderSingleMethod(toEditFromLS.methods[j]);
+        }
+        localStorage.removeItem("toEdit");
+
+    }
+});
+
 saveRecipeBtn.addEventListener("click", function (e) {
     e.preventDefault();
     newRecipe.recipeTitle = recipeName.value;
-    newRecipe.recipeDescription = desciption.value;
+    newRecipe.recipeDescription = description.value;
     Array.from(newMethodList.children).forEach(function(li){
         newRecipe.methods.push(li.innerText);
         li.remove();
@@ -133,6 +157,6 @@ saveRecipeBtn.addEventListener("click", function (e) {
     saveRecipeToLocalStorage(newRecipe);
     
     recipeName.value = "";
-    desciption.value = "";
+    description.value = "";
     window.location= "allRecipes.html";
 });
