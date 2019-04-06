@@ -1,20 +1,14 @@
 //zadanie 5.1 wyświetlanie listy przepisów
 var allRecipes = JSON.parse(localStorage.getItem("recipes"));
 console.log(allRecipes);
-var allRecipesTable = document.querySelector(".section__background-img-allRecipes-table");
-
 
 //funkcja nadająca odpowiednie id przepisom
 for (var i = 0; i < allRecipes.length; i++) {
     allRecipes[i].id = i + 1;
 }
 function renderAllRecipes() {
-    var allRecipes = JSON.parse(localStorage.getItem("recipes"));
+    // var allRecipes = JSON.parse(localStorage.getItem("recipes"));
     var allRecipesTable = document.querySelector(".section__background-img-allRecipes-table");
-    //nadanie właściwego id przepisom
-    for (var k = 0; k < allRecipes.length;k++) {
-        allRecipes[k].id = k + 1;
-    }
     //ustawienie przepisów w tabeli okna lista przepisów
     for (var i = 0; i < allRecipes.length; i++) {
         var recipe = allRecipes[i];
@@ -38,17 +32,29 @@ function renderAllRecipes() {
         var cellIcon = document.createElement('td');
         cellIcon.appendChild(editIcon);
         cellIcon.appendChild(trashIcon);
-        //próba dodania akcji do przycisków- jak???
-        // editIcon.addEventListener("click", function () {
-        //     // this.parentElement.parentElement
-        //     // window.location= "recipes.html";
-        // });
-        // trashIcon.addEventListener("click", function () {
-        //     localStorage.removeItem(recipe);
-        //     this.parentElement.parentElement.remove();
-        // });
-
         row.appendChild(cellIcon);
+        //próba dodania akcji do przycisków- jak???
+        editIcon.addEventListener("click", function () {
+            var toEditRecipeId = Number(this.parentElement.parentElement.firstElementChild.innerHTML);
+            for(var i = 0; i < allRecipes.length; i++) {
+                if(allRecipes[i].id === toEditRecipeId){
+                    localStorage.setItem("toEdit", JSON.stringify(allRecipes[i]));
+                    window.location= "recipes.html";
+                    return
+                }
+            }
+        });
+        trashIcon.addEventListener("click", function () {
+            var toDeleteRecipeId = Number(this.parentElement.parentElement.firstElementChild.innerHTML);
+            for(var i = 0; i < allRecipes.length; i++) {
+                if(allRecipes[i].id === toDeleteRecipeId){
+                    allRecipes.splice(i, 1);
+                    localStorage.setItem("recipes", JSON.stringify(allRecipes));
+                    this.parentElement.parentElement.remove();
+                    return
+                }
+            }
+        });
 
         allRecipesTable.appendChild(row);
     }
