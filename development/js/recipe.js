@@ -137,6 +137,7 @@ window.addEventListener('load', function () {
             // newIngredientsList.appendChild(newLi);
             renderSingleMethod(toEditFromLS.methods[j]);
         }
+        //dodać jeszcze, że przy zapisie tego edytowanego przepisu, jest on zamieniany z istniejącym, a nie dodawany jako nowy!!
         localStorage.removeItem("toEdit");
 
     }
