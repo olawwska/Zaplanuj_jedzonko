@@ -131,6 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < allPlans.length; i++) {
             allPlans[i].showInfo();
             allPlans[i].saveToLocalStorage(newPlan);
+            
+            weekNumber.value = "";
+            planName.value = "";
+            planDescription.value = "";
+            window.location= "allSchedules.html";
         }
+
     })
 });
