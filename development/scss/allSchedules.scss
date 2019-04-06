@@ -16,7 +16,7 @@
   background-image: url('../images/image.png');
   position: relative;
 
-  &-allRecipes {
+  &-allSchedules {
     height: 91%;
     width: 87%;
     border: 1px dashed black;
@@ -94,7 +94,6 @@
       }
       td {
         padding: 10px 0;
-        word-wrap:break-word;
       }
     }
 

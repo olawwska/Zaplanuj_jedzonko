@@ -5,8 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var planName = document.getElementById("plan-name");
     var planDescription = document.getElementById("plan-description");
     var weekNumber = document.getElementById('week-number');
-    console.log(weekNumber);
-    var id = 1;
 
     //button
     var addPlanButton = document.getElementById('savePlan');
@@ -22,21 +20,24 @@ document.addEventListener('DOMContentLoaded', function () {
     var sunday = weekDays[7].querySelectorAll('td > select');
     var selects = document.querySelectorAll('td > select');
 
+
     var recipesLocalStorage = localStorage.getItem('recipes');
     var  recipesLocalStorageObject = JSON.parse(localStorage.getItem('recipes'));
 
     var listOfRecipeTitles = [];
     for (var i = 0; i < recipesLocalStorageObject.length; i++) {
-            listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
+        listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
     }
 
-        for (var i = 0; i < selects.length; i++) {
-            for (var j = 0; j < listOfRecipeTitles.length; j++) {
-                var option = document.createElement('option');
-                option.innerText = listOfRecipeTitles[j];
-                selects[i].appendChild(option);
-            }
+
+
+    for (var i = 0; i < selects.length; i++) {
+        for (var j = 0; j < listOfRecipeTitles.length; j++) {
+            var option = document.createElement('option');
+            option.innerText = listOfRecipeTitles[j];
+            selects[i].appendChild(option);
         }
+    }
 
 
     // window.addEventListener('load', function() {
@@ -50,8 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 
     // reference to selected option CZĘŚC POMOCNICZA
-    // 1. console.log(monday[1].options); odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
-    // 2. console.log(monday[1].options[monday[1].selectedIndex]);  odwołuję się do WYBRANEJ OPCJI z listy rozwijanej dla śniadania (bo od 1) w poniedziałek
+    console.log(monday[1].options);
+    // odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
+    console.log(monday[1].options[monday[1].selectedIndex]);
+
+    // odwołuję się do WYBRANEJ OPCJI z listy rozwijanej dla śniadania (bo od 1) w poniedziałek
 
     console.log(monday[1].options[monday[1].selectedIndex].innerText);
     //3. odwołuję się do wartości inner text dla elementu określonego w poprzednim kroku, czyli wybranej opcji z listy rozwijanej dla - poniedziałek śniadanie
@@ -77,8 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // tworzę konstruktor Schedule, do ktorego przekazuję jako argumenty id i referencje do inputow z nazwa planu numerem tygodnia i opisem planu, w ciele tworze pary klucz-wartosc gdzie - klucz id ma przekazana wartosc zmiennej id, klucz title description i week number maja przypisane wartosci inputow a klucz monday-sunday maja przypisane tablice z selectami danych dni tygodnia (czyli posilkami wybranymi na dany dzien)
 
 
-    function Schedule(id, weekNumber, planName, planDescription) {
-        this.id = id;
+    function Schedule(weekNumber, planName, planDescription) {
         this.title = planName;
         this.description = planDescription;
         this.weekNumber = weekNumber;
@@ -116,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
     addPlanButton.addEventListener('click', function (e) {
         e.preventDefault();
         var allPlans = [];
-        var newPlan = new Schedule(allPlans.length + 1, weekNumber.value, planName.value, planDescription.value);
+        var newPlan = new Schedule(weekNumber.value, planName.value, planDescription.value);
         newPlan.monday = recipesOfMonday;
         newPlan.tuesday = recipesOfTuesday;
         newPlan.wednesday = recipesOfWednesday;
@@ -128,6 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < allPlans.length; i++) {
             allPlans[i].showInfo();
             allPlans[i].saveToLocalStorage(newPlan);
+
+            weekNumber.value = "";
+            planName.value = "";
+            planDescription.value = "";
+            window.location= "allSchedules.html";
         }
+
     })
 });
