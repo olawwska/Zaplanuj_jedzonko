@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
             listOfRecipeTitles.push(recipesLocalStorageObject[i].recipeTitle);
     }
 
-    window.addEventListener('load', function() {
         for (var i = 0; i < selects.length; i++) {
             for (var j = 0; j < listOfRecipeTitles.length; j++) {
                 var option = document.createElement('option');
@@ -38,7 +37,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 selects[i].appendChild(option);
             }
         }
-    });
+
+
+    // window.addEventListener('load', function() {
+    //     for (var i = 0; i < selects.length; i++) {
+    //         for (var j = 0; j < listOfRecipeTitles.length; j++) {
+    //             var option = document.createElement('option');
+    //             option.innerText = listOfRecipeTitles[j];
+    //             selects[i].appendChild(option);
+    //         }
+    //     }
+    // });
 
     // reference to selected option CZĘŚC POMOCNICZA
     // 1. console.log(monday[1].options); odwołuję się do listy rozwijanej opcji dla śniadania w poniedziałek
